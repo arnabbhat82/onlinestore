@@ -1,0 +1,40 @@
+<mat-toolbar>
+    <button mat-mini-fab color="warn">
+      <mat-icon [matMenuTriggerFor]="navmenu">dashboard</mat-icon>
+    </button>
+    <span class="example-icon"></span>
+    <mat-icon>{{iconTitle}}</mat-icon>
+  {{pageTitle}}
+  <span class="example-spacer"></span>
+  <mat-icon matBadge="{{counter}}" matBadgePosition="before" matBadgeColor="accent">shopping_cart</mat-icon>
+  <span class="example-icon"></span>
+  <mat-icon [color]="userStatusColor" routerLink="/product">shop</mat-icon>
+  <span class="example-icon"></span>
+  <mat-icon [color]="userStatusColor" routerLink="/settings">account_box</mat-icon>
+  <span class="example-icon"></span>
+  <mat-icon [matMenuTriggerFor]="helpmenu">help_outline</mat-icon>
+  <span class="example-icon"></span>
+
+  <mat-menu #helpmenu="matMenu">
+    <div *ngIf="helpTitle=='Aboutuspagehelp'">
+        This is help for about us page
+    </div>
+    <div *ngIf="helpTitle=='Settingspagehelp'">
+        This is help for settings page
+    </div>
+    </mat-menu>
+
+    <mat-menu #navmenu="matMenu">
+      <a href="{{configData.fblink}}" target="_blank">
+          <button mat-menu-item><mat-icon svgIcon="facebook"></mat-icon></button>
+      </a>
+      <a href="{{configData.linkedin}}" target="_blank">
+        <button mat-menu-item><mat-icon svgIcon="linkedin"></mat-icon></button>
+        </a>
+      <a href="{{configData.github}}" target="_blank">
+        <button mat-menu-item><mat-icon svgIcon="github"></mat-icon></button>
+        </a>
+        <button mat-menu-item routerLink="/aboutus"><mat-icon>info</mat-icon></button>
+        <button mat-menu-item routerLink="/admin"><mat-icon>settings</mat-icon></button>
+        </mat-menu>
+</mat-toolbar>
