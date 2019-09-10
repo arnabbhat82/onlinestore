@@ -10,6 +10,13 @@ export class UserComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    this.getUser();
+  }
+  onSubmit() {
+  }
+  logout() {
+  }
+  getUser() {
   }
 
 }

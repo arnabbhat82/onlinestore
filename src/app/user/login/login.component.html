@@ -23,7 +23,7 @@
         <mat-form-field class="example-full-width">
           <input type="password" matInput placeholder="app password" name="password" #password="ngModel" ngModel required email>
         </mat-form-field>
-        <span *ngIf="email.invalid && (email.dirty || email.touched)">
+        <span *ngIf="password.invalid && (password.dirty || password.touched)">
           <mat-error *ngIf="password.errors['required']">Password is required.</mat-error>
           <mat-error *ngIf="password.errors['minlength']">Password can't be less than 5 characters.</mat-error>
           <mat-error *ngIf="password.errors['maxlength']">Password can't be less than 30 characters</mat-error>
